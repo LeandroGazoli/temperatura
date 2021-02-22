@@ -2,14 +2,26 @@
 <html>
 <head>
 	<title>C para F</title>
+	<meta charset="utf-8">
 </head>
 <body>
+
+	<select onchange="teste(this)" id="opcoes">
+		<option>Selecione uma opção</option>
+		<option id="0" value="0" >0</option>
+		<option id="1" value="1" >1</option>
+	</select>
 
 	<input onkeyup="cal('c')" id="c" type="number" name="c" placeholder="insirir valor de c" value="0">
 
 	<input onkeyup="cal('f')" id="f" type="number" name="f" placeholder="insirir valor de f" value="0">
 
 	<script>
+		function teste(selectObject) {
+			var value = selectObject.value;  
+			console.log(value);
+		}
+
 		function cal(tipo) {
 			if (tipo === 'c') {
 				var c = eval(document.getElementById('c').value)
@@ -23,7 +35,7 @@
 				var soma = (f-32) * 5/9
 				document.getElementById('c').value = soma
 			}
-			
+
 		}
 	</script>
 
