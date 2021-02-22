@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C para F</title>
+</head>
+<body>
+
+<input onkeyup="cal('c')" id="c" type="number" name="c" placeholder="insirir valor de c" value="0">
+
+<input onkeyup="cal('f')" id="f" type="number" name="f" placeholder="insirir valor de f" value="0">
+
+<script>
+	function cal(tipo) {
+		if (tipo === 'c') {
+			var c = eval(document.getElementById('c').value)
+			var soma = (c*9/5) + 32
+			document.getElementById('f').value = soma
+			console.log(soma)
+		}
+		if (tipo === 'f') {
+			var f = eval(document.getElementById('f').value)
+			console.log(f)
+			var soma = (f-32) * 5/9
+			document.getElementById('c').value = soma
+		}
+		
+	}
+</script>
+
+</body>
+</html>
